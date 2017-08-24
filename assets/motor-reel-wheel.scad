@@ -1,29 +1,16 @@
+include <components/motor.scad>
+include <components/wheel.scad>
 
 MotorReelWheel();
 
 module MotorReelWheel() {
 
-    epsilon = 0.1;
-    fn = 60;
-
-    wheel_border_diam = 25;
-    wheel_central_diam = 25;
-    wheel_main_diam = 20;
-    wheel_total_size = 24;
-    borders_transition_size = 2;
-    central_transition_size = 2;
-
-    motor_throw_size = 8;
-    axis_throw_size = 15;
-    axis_throw_diam = 3.4;
-
-    fixation_throw_diam = 2;
+    include <params/motor-reel-wheel.scad>
 
     difference() {
         ReelWheel();
-
         translate([0, wheel_total_size / 2 - motor_throw_size / 2 + epsilon, 0])
-        byj_motor_axis_throw();
+        components_motor_CouplingAxisThrow(motor_throw_size);
 
         translate([0, - (wheel_total_size / 2 - axis_throw_size / 2 + epsilon), 0])
         rotate([90,0,0])
@@ -40,40 +27,18 @@ module MotorReelWheel() {
 
         translate([ -(axis_throw_diam + fixation_throw_diam) / 2, -(central_transition_size + fixation_throw_diam / 2), 0])
             cylinder(d = fixation_throw_diam, h = wheel_border_diam, center=true, $fn = fn);
-
-
     }
-
 
 
     module ReelWheel() {
         rotate([90,0,0]) {
             translate([0,0, - wheel_total_size / 2]) {
-                halfReel();
+                components_weel_WireWeel(wheel_border_diam, wheel_main_diam, wheel_central_diam, borders_transition_size, central_transition_size, wheel_total_size / 2, fn);
                 translate([0,0,wheel_total_size])
                 mirror([0,0,1])
-                halfReel();
+                components_weel_WireWeel(wheel_border_diam, wheel_main_diam, wheel_central_diam, borders_transition_size, central_transition_size, wheel_total_size / 2, fn);
             }
         }
     }
 
-    module halfReel() {
-        wheel_flat_size = (wheel_total_size / 2 - central_transition_size - borders_transition_size) ;
-
-        cylinder(h = borders_transition_size, r1= wheel_border_diam / 2, r2= wheel_main_diam / 2, $fn = 80);
-
-        translate([0,0,borders_transition_size]) {
-            cylinder(h = wheel_flat_size, r = wheel_main_diam / 2, $fn = 80);
-            translate([0,0,wheel_flat_size]) {
-                cylinder(h = central_transition_size, r1= wheel_main_diam / 2, r2 = wheel_central_diam / 2, $fn = 80);
-            }
-        }
-
-    }
-
-    module byj_motor_axis_throw(throw_size = 8) {
-        // Real dimensions 3.2, 5.2
-        rotate([90,0,0])
-        cube([3.2, 5.2, throw_size], center=true);
-    }
 }
