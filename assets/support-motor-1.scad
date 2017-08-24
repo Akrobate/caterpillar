@@ -3,6 +3,8 @@
  * Model parameters
  */
 
+include <components/support.scad>
+
 SupportMotor1();
 
 module SupportMotor1() {
@@ -28,6 +30,11 @@ module SupportMotor1() {
 
     module support(support_height = 140, support_width = 54, support_motor_support_height = 60, support_thickness = 3, bars_width = 13, horizontal_support_width = 30, fn = 20) {
 
+
+       components_support_VerticalSupport(support_height, support_width, support_motor_support_height, support_thickness, bars_width, horizontal_support_width, fn);
+       //.VerticalSupport(support_height, support_width, support_motor_support_height, support_thickness, bars_width, horizontal_support_width, fn);*/
+
+/*
         union() {
             translate([0,0,0])
             cube([support_thickness, bars_width, support_height]);
@@ -53,6 +60,7 @@ module SupportMotor1() {
             cylinder(h=support_thickness, d=bars_width, center=false, $fn=fn);
 
         }
+        */
 
     }
 
