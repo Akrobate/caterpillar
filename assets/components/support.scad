@@ -1,7 +1,8 @@
 module components_support_VerticalHorizontalSupport(support_height = 140, support_width = 54, support_motor_support_height = 60, support_thickness = 3, bars_width = 13, horizontal_support_width = 30, fn = 20) {
     union() {
         components_support_VerticalSupport(support_height, support_width, support_motor_support_height, support_thickness, bars_width, horizontal_support_width, fn);
-        components_support_HorizontalSupport(support_width, support_thickness, horizontal_support_width);
+        // components_support_HorizontalSupport(support_width, support_thickness, horizontal_support_width);
+        components_support_HorizontalSupportRounded(support_width, support_thickness, horizontal_support_width);
     }
 }
 
@@ -41,6 +42,16 @@ module components_support_VerticalSupportThrows(support_height = 140, support_th
 module components_support_HorizontalSupport(support_width = 54, support_thickness = 3, horizontal_support_width = 30) {
     translate([0,0,0])
     cube([horizontal_support_width, support_width, support_thickness]);
+}
+
+
+module components_support_HorizontalSupportRounded(support_width = 54, support_thickness = 3, horizontal_support_width = 30) {
+    difference() {
+        components_support_HorizontalSupport(support_width, support_thickness, horizontal_support_width);
+
+        //cylinder(h = support_thickness, horizontal_support_width)
+
+    }
 }
 
 
