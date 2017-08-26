@@ -45,11 +45,40 @@ module components_support_HorizontalSupport(support_width = 54, support_thicknes
 }
 
 
+module components_support_RoundedDifference(diameter_rounded = 20, thickness = 3) {
+    epsilon = 0.1;
+    difference(){
+        cube([diameter_rounded, diameter_rounded, thickness], center=true);
+        cylinder(h = thickness + epsilon, d = diameter_rounded, $fn = fn, center=true);
+        translate([-diameter_rounded / 2, 0, 0]) {
+            cube([diameter_rounded + epsilon, diameter_rounded + epsilon, thickness + epsilon], center=true);
+        }
+        translate([0,-diameter_rounded / 2, 0]) {
+            cube([diameter_rounded + epsilon, diameter_rounded + epsilon, thickness + epsilon], center=true);
+        }
+    }
+}
+
+
 module components_support_HorizontalSupportRounded(support_width = 54, support_thickness = 3, horizontal_support_width = 30) {
+
+    epsilon = 0.001;
+
     difference() {
         components_support_HorizontalSupport(support_width, support_thickness, horizontal_support_width);
 
-        //cylinder(h = support_thickness, horizontal_support_width)
+        diameter_rounded = (support_width - support_thickness) / 3;
+
+        translate([horizontal_support_width - (diameter_rounded / 2), diameter_rounded / 2, support_thickness / 2]) {
+            rotate([0,0, -90])
+            scale([1 * (1 + epsilon), 1 * (1 + epsilon),1.5])
+            components_support_RoundedDifference(diameter_rounded, thickness = 3, fn = 120);
+        }
+
+        translate([horizontal_support_width - (diameter_rounded / 2), support_width - diameter_rounded / 2, support_thickness / 2]) {
+            scale([1 * (1 + epsilon), 1 * (1 + epsilon),1.5])
+            components_support_RoundedDifference(diameter_rounded, thickness = 3, fn = 120);
+        }
 
     }
 }
