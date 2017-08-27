@@ -1,5 +1,5 @@
 support_height = 140;
-support_width = 55;
+support_width = 40;
 support_motor_support_height = 60;
 support_thickness = 4;
 bars_width = 13;

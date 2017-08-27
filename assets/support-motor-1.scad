@@ -13,6 +13,12 @@ module SupportMotor1() {
         translate([0,45,32])
         components_motor_BYJMotorThrows();
         components_support_VerticalSupportThrows(support_height, support_throw_diameter, bars_width);
-        components_support_HorizontalSupportThrows(horizontal_support_width, support_width, horizontal_support_throw_diameter);
+        components_support_HorizontalSupportThrows(
+            horizontal_support_width,
+            support_width,
+            horizontal_support_throw_diameter,
+            support_thickness,
+            support_thickness
+        );
     }
 }
