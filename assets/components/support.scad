@@ -32,6 +32,16 @@ module components_support_VerticalSupport(support_height = 140, support_width = 
 }
 
 
+module components_support_VerticalSupportEconomicPlastic(support_height, support_width, support_motor_support_height, support_thickness, bars_width, horizontal_support_width, fn=60) {
+    epsilon = 0.1;
+    pos_x = support_width / 2;
+    pos_y = support_motor_support_height / 2;
+
+    translate([0, pos_x, pos_y])
+        cube([support_thickness * 2 + epsilon, support_width  - (bars_width * 2), support_motor_support_height  - (bars_width * 2)], center = true);
+}
+
+
 module components_support_VerticalSupportThrows(support_height = 140, support_throw_diameter = 3, bars_width = 13, fn = 60) {
     translate([0, bars_width / 2, support_height])
     rotate([0,90,0])
