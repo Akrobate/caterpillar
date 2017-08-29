@@ -14,9 +14,12 @@ module SupportBridge() {
 
     central_holder_ratio = 0.5;
 
+
     FullWithTrows();
 
     module FullWithTrows() {
+        translate([size_x / 2,0,size_y/2])
+        rotate([0,-90,0])
         difference(){
             filled_zone();
             throws();
