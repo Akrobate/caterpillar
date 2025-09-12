@@ -24,5 +24,5 @@ module mainSupports() {
 
     translate([0,-123,40])
     rotate([0,0,90])
-    MotorReelWheel();
+    MotorReelWheelPiece();
 }

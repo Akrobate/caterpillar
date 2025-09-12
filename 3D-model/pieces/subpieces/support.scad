@@ -1,3 +1,4 @@
+
 module components_support_VerticalHorizontalSupport(support_height = 140, support_width = 54, support_motor_support_height = 60, support_thickness = 3, bars_width = 13, horizontal_support_width = 30, fn = 20) {
     union() {
         components_support_VerticalSupport(support_height, support_width, support_motor_support_height, support_thickness, bars_width, horizontal_support_width, fn);
@@ -55,7 +56,7 @@ module components_support_HorizontalSupport(support_width = 54, support_thicknes
 }
 
 
-module components_support_RoundedDifference(diameter_rounded = 20, thickness = 3) {
+module components_support_RoundedDifference(diameter_rounded = 20, thickness = 3, fn = 60) {
     epsilon = 0.1;
     difference(){
         cube([diameter_rounded, diameter_rounded, thickness], center=true);

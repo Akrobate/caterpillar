@@ -32,7 +32,7 @@ module SupportA(support_spacing = 40) {
 
     translate([0, 27,40])
     rotate([0,0,90])
-    MotorReelWheel();
+    MotorReelWheelPiece();
 
     translate([0, 6.5, 140])
     TopWheels();

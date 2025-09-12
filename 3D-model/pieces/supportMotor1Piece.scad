@@ -1,12 +1,9 @@
-include <components/support.scad>
-include <components/motor.scad>
+include <subpieces/support.scad>
+include <subpieces/motor.scad>
+include <../params/support.scad>
 
-SupportMotor1();
 
-module SupportMotor1(center = false) {
-
-    // Common params for all supports
-    include <params/support.scad>
+module supportMotor1Piece(center = false) {
 
     y_decal = 0;
     if (center) {
@@ -28,3 +25,5 @@ module SupportMotor1(center = false) {
         );
     }
 }
+
+supportMotor1Piece();

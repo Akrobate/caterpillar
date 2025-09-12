@@ -1,4 +1,4 @@
-include <components/support.scad>
+include <subpieces/support.scad>
 
 SupportSimple1();
 

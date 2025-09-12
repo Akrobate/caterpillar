@@ -1,13 +1,9 @@
-include <components/support.scad>
-include <components/motor.scad>
+include <subpieces/support.scad>
+include <subpieces/motor.scad>
+include <../params/support.scad>
 
-SupportMotor2();
-
-module SupportMotor2() {
-
+module supportMotor2Piece() {
     // Common params for all supports
-    include <params/support.scad>
-
     mirror([1,0,0])
     difference() {
         components_support_VerticalHorizontalSupport(support_height, support_width, support_motor_support_height, support_thickness, bars_width, horizontal_support_width, fn=60);
@@ -23,3 +19,5 @@ module SupportMotor2() {
         );
     }
 }
+
+supportMotor2Piece();

@@ -1,11 +1,9 @@
-include <components/motor.scad>
-include <components/wheel.scad>
+include <subpieces/motor.scad>
+include <subpieces/wheel.scad>
+include <../params/motor-reel-wheel.scad>
 
-MotorReelWheel();
 
-module MotorReelWheel() {
-
-    include <params/motor-reel-wheel.scad>
+module MotorReelWheelPiece() {
 
     difference() {
         ReelWheel();
@@ -40,5 +38,6 @@ module MotorReelWheel() {
             }
         }
     }
-
 }
+
+MotorReelWheelPiece();

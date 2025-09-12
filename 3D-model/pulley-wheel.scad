@@ -1,4 +1,4 @@
-include <components/wheel.scad>
+include <subpieces/wheel.scad>
 
 PulleyWheel();
 
