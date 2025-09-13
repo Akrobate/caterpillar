@@ -1,5 +1,4 @@
-use <support-motor-1.scad>
-use <support-motor-2.scad>
+use <components/MotorizedSupportComponent.scad>
 
 use <support-simple-2.scad>
 use <support-simple-1.scad>

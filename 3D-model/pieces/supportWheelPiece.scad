@@ -1,10 +1,8 @@
 include <subpieces/wheel.scad>
+include <../params/support-wheel.scad>
 
-SupportWheel();
+module supportWheelPiece() {
 
-module SupportWheel() {
-
-    include <params/support-wheel.scad>
 
     difference() {
         union() {
@@ -16,3 +14,5 @@ module SupportWheel() {
         cylinder(d = axis_throw_diam, h = wheel_size + wheel_separator_size + epsilon * 2, center=false, $fn = fn);
     }
 }
+
+supportWheelPiece();

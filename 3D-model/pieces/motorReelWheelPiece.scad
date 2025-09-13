@@ -3,7 +3,7 @@ include <subpieces/wheel.scad>
 include <../params/motor-reel-wheel.scad>
 
 
-module MotorReelWheelPiece() {
+module motorReelWheelPiece() {
 
     difference() {
         ReelWheel();
@@ -40,4 +40,4 @@ module MotorReelWheelPiece() {
     }
 }
 
-MotorReelWheelPiece();
+motorReelWheelPiece();
