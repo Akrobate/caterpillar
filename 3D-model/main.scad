@@ -1,7 +1,5 @@
-use <components/MotorizedSupportComponent.scad>
-
-use <support-simple-2.scad>
-use <support-simple-1.scad>
+use <components/motorizedSupportComponent.scad>
+use <components/simpleSupportComponent.scad>
 
 use <motor-reel-wheel.scad>
 
@@ -15,10 +13,10 @@ main(support_spacing, support_distance);
 
 module main(support_spacing, support_distance) {
     translate([0,-support_distance / 2, 0])
-        SupportA(support_spacing);
+        motorizedSupportComponent(support_spacing);
 
     translate([0, support_distance / 2, 0])
-        SupportB(support_spacing);
+        simpleSupportComponent(support_spacing);
 }
 
 // Motorized main support
