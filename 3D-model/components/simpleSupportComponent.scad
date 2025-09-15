@@ -1,4 +1,5 @@
 use <topWheelsComponent.scad>
+use <mountingPulleyComponent.scad>
 
 use <../pieces/simpleSupport1Piece.scad>
 use <../pieces/simpleSupport2Piece.scad>
@@ -19,7 +20,7 @@ module simpleSupportComponent(support_spacing = 40) {
         topWheelsComponent();
 
     translate([0, -6.5, 0])
-        mountingPulley();
+        mountingPulleyComponent();
 }
 
 simpleSupportComponent();

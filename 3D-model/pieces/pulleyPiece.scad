@@ -1,10 +1,7 @@
 include <subpieces/wheel.scad>
 
-Pulley();
 
-module Pulley() {
-
-    //include <params/support-wheel.scad>
+module pulleyPiece() {
 
     pulley_thickness = 2;
     pulley_width = 10;
@@ -42,3 +39,5 @@ module Pulley() {
         cylinder(h = pulley_separation_distance * 2, d = puller_throws, center = true, $fn = fn);
     }
 }
+
+pulleyPiece();
