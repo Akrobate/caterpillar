@@ -1,7 +1,5 @@
 
-SupportBridge();
-
-module SupportBridge() {
+module supportBridgePiece() {
 
     size_x = 20;
     size_z = 10;
@@ -53,3 +51,5 @@ module SupportBridge() {
     }
 
 }
+
+supportBridgePiece();

@@ -102,7 +102,8 @@ module components_support_HorizontalSupportThrows(
         horizontal_support_throw_diameter = 4,
         support_thickness = 3,
         horizontal_support_thickness = 3,
-        fn = 60) {
+        fn = 60
+) {
 
     epsilon = 0.01;
     horizontal_support_throw_radius = horizontal_support_throw_diameter / 2;
@@ -110,8 +111,6 @@ module components_support_HorizontalSupportThrows(
     cone_throw_heigh = horizontal_support_throw_radius * 1.1;
     cone_throw_r2 = horizontal_support_throw_radius * 1.75;
 
-    //horizontal_support_thickness = 3;
-echo (horizontal_support_thickness);
     union(){
         translate([support_thickness + (horizontal_support_width - support_thickness) / 2,  (horizontal_support_width - support_thickness) / 2, 0]) {
             cylinder(h = horizontal_support_thickness * 2, d=horizontal_support_throw_diameter, center=true, $fn=fn);

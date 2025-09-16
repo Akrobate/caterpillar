@@ -1,5 +1,5 @@
 include <subpieces/support.scad>
-include <../params/support-simple.scad>
+include <../configurations/support-simple.scad>
 
 simpleSupport1Piece();
 

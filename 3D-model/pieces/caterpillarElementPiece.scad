@@ -1,10 +1,8 @@
 
-caterpillarElement();
-//mirror([0,0,1])
-//caterpillarElement();
 
 
-module caterpillarElement() {
+
+module caterpillarElementPiece() {
     throw_diam = 2;
 
     cut_height = 2.5;
@@ -25,3 +23,7 @@ module caterpillarElement() {
         cube([r_spehere * 2, r_spehere *2, r_spehere *2], center=true);
     }
 }
+
+caterpillarElementPiece();
+//mirror([0,0,1])
+//caterpillarElement();
