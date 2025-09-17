@@ -1,4 +1,4 @@
-include <subpieces/wheel.scad>
+include <subpieces/wheelSubpiece.scad>
 
 
 module pulleyPiece() {
