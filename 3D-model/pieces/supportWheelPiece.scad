@@ -1,5 +1,5 @@
 include <subpieces/wheelSubpiece.scad>
-include <../configurations/support-wheelSubpiece.scad>
+include <../configurations/support-wheel.scad>
 
 module supportWheelPiece() {
     difference() {

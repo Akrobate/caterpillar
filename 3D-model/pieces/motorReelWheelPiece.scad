@@ -1,6 +1,6 @@
 include <subpieces/motor.scad>
 include <subpieces/wheelSubpiece.scad>
-include <../configurations/motor-reel-wheelSubpiece.scad>
+include <../configurations/motor-reel-wheel.scad>
 
 
 module motorReelWheelPiece() {
