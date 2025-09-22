@@ -1,4 +1,4 @@
-include <subpieces/support.scad>
+include <subpieces/supportSubpiece.scad>
 include <../configurations/support-simple.scad>
 
 simpleSupport1Piece();

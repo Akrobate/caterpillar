@@ -1,6 +1,6 @@
-include <subpieces/support.scad>
+include <subpieces/supportSubpiece.scad>
 include <subpieces/motor.scad>
-include <../configurations/support.scad>
+include <../configurations/supportSubpiece.scad>
 
 module supportMotor2Piece() {
     // Common params for all supports
