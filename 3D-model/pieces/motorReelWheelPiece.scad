@@ -1,4 +1,4 @@
-include <subpieces/motor.scad>
+include <subpieces/motorSubpiece.scad>
 include <subpieces/wheelSubpiece.scad>
 include <../configurations/motor-reel-wheel.scad>
 

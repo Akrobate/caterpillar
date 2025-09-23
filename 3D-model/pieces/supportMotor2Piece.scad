@@ -1,5 +1,5 @@
 include <subpieces/supportSubpiece.scad>
-include <subpieces/motor.scad>
+include <subpieces/motorSubpiece.scad>
 include <../configurations/supportSubpiece.scad>
 
 module supportMotor2Piece() {
