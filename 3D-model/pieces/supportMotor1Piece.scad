@@ -1,6 +1,6 @@
-include <subpieces/supportSubpiece.scad>
-include <subpieces/motorSubpiece.scad>
-include <../configurations/supportSubpiece.scad>
+use <subpieces/supportSubpiece.scad>
+use <subpieces/motorSubpiece.scad>
+include <../configurations/support-simple.scad>
 
 
 module supportMotor1Piece(center = false) {
