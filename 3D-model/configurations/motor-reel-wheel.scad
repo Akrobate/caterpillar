@@ -1,5 +1,4 @@
 epsilon = 0.1;
-fn = 80;
 
 wheel_border_diam = 25;
 wheel_central_diam = 25;
